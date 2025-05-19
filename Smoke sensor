@@ -26,10 +26,8 @@ void setup() {
 }
 
 void loop() {
-  int smokeLevel = analogRead(smokeSensor);
-  Serial.println(smokeLevel);
 
-  if (smokeLevel < normalThreshold) {
+ if (smokeLevel < normalThreshold) {
     lcd.setCursor(0, 1);
     lcd.print("Level: Normal   ");
     digitalWrite(buzzer, LOW);
@@ -38,7 +36,7 @@ void loop() {
   } 
   else if (smokeLevel < mediumThreshold) {
     lcd.setCursor(0, 1);
-    lcd.print("Level: Medium   ");
+    lcd.print("Level: Medium");
     digitalWrite(buzzer, HIGH);
     digitalWrite(led, LOW);
     digitalWrite(relay, LOW);
